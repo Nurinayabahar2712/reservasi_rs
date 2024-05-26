@@ -277,23 +277,6 @@ a.tbl-beige:hover{
     margin-bottom: 1rem;
     width: 100%;
 }
-@media screen and (max-width: 992px) {
-    .pilihan-rumah-sakit {
-        flex: 1 1 40%; /* Menyesuaikan lebar item saat layar lebih kecil */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .pilihan-rumah-sakit {
-        flex: 1 1 45%; /* Menyesuaikan lebar item saat layar lebih kecil */
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .pilihan-rumah-sakit {
-        flex: 1 1 70%; /* Menyesuaikan lebar item saat layar mobile */
-    }
-}
 table {
     width: 100%;
     border-collapse: collapse;

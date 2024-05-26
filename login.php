@@ -7,7 +7,7 @@ if(isset($_POST["submit"])){
     $row = mysqli_fetch_assoc($result);
      if(mysqli_num_rows($result)>0){
         if($password == $row["password"]){
-            $_SESSION["login"] = true;
+            $_SESSION["login"] = true; 
             $_SESSION["id"] = $row["id"];
             header("location: index.html");
         }else{
@@ -25,22 +25,33 @@ if(isset($_POST["submit"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href= "registrasi.css" />
     <title>Login</title>
 </head>
 <body>
+    
+    <form class="wrapper" action="" method="post" autocomplete="off">
     <h2>Login</h2>
-    <form class="" action="" method="post" autocomplete="off">
+    <div class = "input-box">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Masukkan Email Anda" size="5" class="form-input" required value=""/>
+        <input type="text" name="email" id="email" placeholder="Masukkan Email Anda"  class="form-input" required value=""/>
+        <i class='bx bxs-user'></i>
+    </div>
+    <div class = "input-box">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password"  required value=""/>
+        <input type="password" id="password" name="password" placeholder="Masukkan Password Anda" required value=""/>
+        <i class='bx bxs-lock-alt'></i>
+    </div>
+    <div>
         <button type="submit" name="submit">Login</button>
-    </form>
-
+    </div>
+   
     <div class="bottom">
-        <p>Lanjut Reservasi?
-            <a href="reservasi.php">Reservasi Disini</a>
+        <P>Belum Punya Akun?
+            <a href="registrasi.php">Registrasi Disini</a>
         </p>
     </div>
+    </form>
 </body>
 </html>

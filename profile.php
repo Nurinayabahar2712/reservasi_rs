@@ -10,10 +10,7 @@ if (!isset($_SESSION["login"])) {
 }
 
 // Periksa apakah pengguna adalah admin atau user
-if ($_SESSION["role"] == 'admin') {
-    $query = mysqli_query($conn, "SELECT * FROM db_user WHERE id = '{$_SESSION["id"]}'");
-    $profile = mysqli_fetch_assoc($query);
-} elseif ($_SESSION["role"] == 'user') {
+if ($_SESSION["role"] == 'admin' || $_SESSION["role"] == 'user') {
     $query = mysqli_query($conn, "SELECT * FROM db_user WHERE id = '{$_SESSION["id"]}'");
     $profile = mysqli_fetch_assoc($query);
 } else {
@@ -33,29 +30,19 @@ if ($_SESSION["role"] == 'admin') {
 </head>
 <body>
     <div class="profile-container">
-    <a href="<?php echo $_SESSION['role'] == 'admin' ? 'admin_dashboard.php' : 'user_dashboard.php'; ?>" class="close-button">&times;</a>
+        <a href="<?php echo $_SESSION['role'] == 'admin' ? 'admin_dashboard.php' : 'user_dashboard.php'; ?>" class="close-button">&times;</a>
         <h2>Profil</h2>
         <div class="profile-info">
             <div class="profile-item"><strong>Nama:</strong><span><?php echo $profile['nama']; ?></span></div>
             <div class="profile-item"><strong>Email:</strong><span><?php echo $profile['email']; ?></span></div>
-            <!-- Tambahkan informasi profil tambahan sesuai kebutuhan -->
-            <?php if ($_SESSION["role"] == 'user'): ?>
-                <div class="profile-item"><strong>Nomor KTP:</strong><span><?php echo $profile['username']; ?></span></div>
-                <div class="profile-item"><strong>Alamat:</strong><span><?php echo $profile['alamat']; ?></span></div>
-                <div class="profile-item"><strong>Usia:</strong><span><?php echo $profile['usia']; ?></span></div>
-                <div class="profile-item"><strong>Nomor Handphone:</strong><span><?php echo $profile['no_HP']; ?></span></div>
-                <div class="profile-item"><strong>Jenis Kelamin:</strong><span><?php echo $profile['jenis_kelamin'] == 'L' ? 'Laki-Laki' : 'Perempuan'; ?></span></div>
-                <!-- Tambahkan informasi profil tambahan untuk user -->
-            <?php endif; ?>
-            <!-- Tampilkan informasi profil tambahan untuk admin -->
-            <?php if ($_SESSION["role"] == 'admin'): ?>
-                <div class="profile-item"><strong>Nomor KTP:</strong><span><?php echo $profile['username']; ?></span></div>
-                <div class="profile-item"><strong>Alamat:</strong><span><?php echo $profile['alamat']; ?></span></div>
-                <div class="profile-item"><strong>Usia:</strong><span><?php echo $profile['usia']; ?></span></div>
-                <div class="profile-item"><strong>Nomor Handphone:</strong><span><?php echo $profile['no_HP']; ?></span></div>
-                <div class="profile-item"><strong>Jenis Kelamin:</strong><span><?php echo $profile['jenis_kelamin'] == 'L' ? 'Laki-Laki' : 'Perempuan'; ?></span></div>
-                <!-- Tambahkan informasi profil tambahan untuk admin -->
-            <?php endif; ?>
+            <div class="profile-item"><strong>Nomor KTP:</strong><span><?php echo $profile['username']; ?></span></div>
+            <div class="profile-item"><strong>Alamat:</strong><span><?php echo $profile['alamat']; ?></span></div>
+            <div class="profile-item"><strong>Usia:</strong><span><?php echo $profile['usia']; ?></span></div>
+            <div class="profile-item"><strong>Nomor Handphone:</strong><span><?php echo $profile['no_HP']; ?></span></div>
+            <div class="profile-item"><strong>Jenis Kelamin:</strong><span><?php echo $profile['jenis_kelamin'] == 'L' ? 'Laki-Laki' : 'Perempuan'; ?></span></div>
+        </div>
+        <div class="button-container">
+            <button onclick="window.location.href='logout.php'">Logout</button>
         </div>
     </div>
 </body>

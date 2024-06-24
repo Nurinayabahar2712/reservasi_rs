@@ -25,7 +25,7 @@ include "koneksi.php";
                                 <p class="card-text"><?php echo $row['alamat']; ?></p>
                                 <p class="card-text"><?php echo $row['noHP']; ?></p>
                                 <p class="card-text"><?php echo $row['email']; ?></p>
-                                <!-- <p><button><a href="detail.php?id=/<?php echo $row['id']; ?>">DETAIL</a></button></p> -->
+                                <p><button><a href="detail.php?id=<?php echo $row['id']; ?>">DETAIL</a></button></p>
                             </div>
                         </div>
                     </div>
@@ -37,12 +37,7 @@ include "koneksi.php";
             ?>
         </div>
     </div>
-     <div class="button-container">
-            <a href="tambahRS_admin.php" class="add-button">Tambah Data</a>
-            <a href="admin_dashboard.php" class="cancel-button">Batal</a>
-        </div>
-</div>
-<footer>
+    <footer>
         <p>&copy; 2024 Web Reservasi Rumah Sakit</p>
     </footer>
 </body>

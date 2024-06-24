@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 /* Mengatur gaya dasar untuk body */
 body {
   font-family: Arial, sans-serif;
@@ -19,8 +23,18 @@ form {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 90%;
   max-width: 400px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInSlideDown 0.9s forwards;
+}
+
+@keyframes fadeInSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mengatur gaya untuk fieldset dan legend */
@@ -31,9 +45,10 @@ fieldset {
 }
 
 legend {
-  font-size: 24px;
+  font-size: 1.5em;
   margin-bottom: 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 /* Mengatur gaya untuk label dan input */
@@ -51,19 +66,23 @@ label {
 .input-container .icon {
   position: absolute;
   left: 10px;
-  top: 50%;
+  top: 80%;
   transform: translateY(-50%);
   color: #aaa;
 }
+
 .input-box i{
   position: absolute;
-  right: 1px;
+  right: 10px;
   top: 50%;
-  transform: translateY(-10%);
+  transform: translateY(-50%);
+  cursor: pointer;
 }
+
 .wrapper .input-box{
   position: relative;
 }
+
 .input-container input {
   width: 100%;
   padding: 10px 10px 10px 30px;
@@ -77,6 +96,27 @@ input[type="text"], input[type="password"], input[type="radio"] {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.role-select {
+  width: 30%;
+  padding:3px;
+  border: 1px solid #0d0d0d;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+}
+
+.role-select:focus {
+  border-color: #ccc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0,5);
+}
+
+.role-select option {
+  padding: 5px;
 }
 
 /* Mengatur gaya untuk tombol submit */
@@ -100,7 +140,7 @@ button:hover {
   display: flex;
   padding-top: 0.1rem;
   margin-bottom:0!important;
-  align-items: center; /* Menyelaraskan item secara vertikal */
+  align-items: center;
 }
 
 .flex span {
@@ -130,3 +170,30 @@ button:hover {
 .bottom a:hover {
   text-decoration: underline;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+.button-container {
+  margin-top: 20px; /* Jarak antara form field dan tombol */
+}
+.button-container button {
+  margin-right: 20px; /* Jarak horizontal antara tombol */
+  margin-top: 10px; /* Jarak vertikal antara tombol dan elemen di atasnya */
+}
+.button-container .cancel-button {
+  margin-left: 0; /* Pastikan tidak ada margin tambahan di sebelah kiri tombol batal */
+}
+
+select {
+  color: black;
+}
+

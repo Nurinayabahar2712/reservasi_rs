@@ -50,3 +50,24 @@ h2 {
 .profile-item span {
     color: #777;
 }
+.button-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #45a049;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}

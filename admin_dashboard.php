@@ -31,9 +31,9 @@ header("Expires: 0"); // Proxies.
                     <li><a href="#Home">Home</a></li>
                     <li><a href="#Alur">Alur</a></li>
                     <li><a href="daftarRS_admin.php">Tambah Rumah Sakit</a></li>
-                    <li><a href="tambahpoli_admin.php">Daftar Poli</a></li>
+                    <li><a href="admin_poli.php">Tambah Poli</a></li>
+                    <li><a href="daftarDokter_admin.php">Dokter</a></li>
                     <li><a href="reservasi.html">Reservasi</a></li>
-                    <li><a href="logout.php">Logout</a></li>
                     <li><a href="profile.php"><i class='bx bxs-user profile-icon'></i></a></li>
 
             </div>
